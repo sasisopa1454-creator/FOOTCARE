@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>FOOT CARE</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<header class="header">
+  <img src="https://i.ibb.co/93G8ZVtz/logo.png" class="logo">
+  <div>
+    <h1>FOOT CARE👩🏻‍⚕️🩺</h1>
+    <p>ระบบประเมินการเคลื่อนไหวข้อเท้า (Ankle ROM Assessment)</p>
+  </div>
+</header>
+
+<main class="container-fluid">
+
+<!-- PAGE 1 -->
+<section id="page1" class="card-box home-bg">
+<h2>ข้อมูลผู้เข้ารับการประเมิน🧓🏻🗃️</h2>
+
+<label>คำนำหน้า</label>
+<select id="prefix" class="form-control form-lg">
+  <option value="">-- เลือก --</option>
+  <option>นาย</option>
+  <option>นางสาว</option>
+  <option>นาง</option>
+</select>
+
+<label>ชื่อ</label>
+<input id="fname" class="form-control form-lg" placeholder="สมชาย">
+
+<label>นามสกุล</label>
+<input id="lname" class="form-control form-lg" placeholder="ใจดี">
+
+<label>เลขประจำตัวประชาชน</label>
+<input id="cid" class="form-control form-lg">
+<small id="cidErr" class="error"></small>
+
+<label>วันเดือนปีเกิด</label>
+<input type="date" id="birth" class="form-control form-lg">
+
+<label>เบอร์โทรศัพท์</label>
+<input id="phone" class="form-control form-lg">
+<small id="phoneErr" class="error"></small>
+
+<button id="nextBtn" class="btn btn-main" disabled>ถัดไป</button>
+</section>
+
+<!-- PAGE 2 -->
+<section id="page2" class="card-box d-none">
+<h2>วิธีการฝึก(Training Steps)🙆🏻‍♀️🦶🏻</h2>
+
+<div class="image-box">
+  <span class="img-label">การเหยียดปลายเท้า (Plantar Flexion)</span>
+  <img src="https://i.ibb.co/4wh6nqBc/training1.jpg">
+</div>
+
+<div class="image-box">
+  <span class="img-label">การยกปลายเท้า (Dorsiflexion)</span>
+  <img src="https://i.ibb.co/htcqKSL/training2.jpg" class="full-img">
+</div>
+
+<div class="nav-btn">
+  <button class="btn btn-secondary" onclick="back(1)">ย้อนกลับ</button>
+  <button class="btn btn-main" onclick="gotoPage3()">ถัดไป</button>
+</div>
+</section>
+
+<!-- PAGE 3 -->
+<section id="page3" class="card-box d-none">
+<h2>ผลการประเมิน(Examination Results)👩🏻‍⚕️🏥</h2>
+
+<table class="table table-bordered text-center table-lg">
+<thead>
+<tr>
+<th>Dorsi Max (°)</th>
+<th>Plantar Max (°)</th>
+<th>ROM (°)</th>
+</tr>
+</thead>
+<tbody id="resultTable"></tbody>
+</table>
+
+<canvas id="chart" height="120"></canvas>
+
+<div class="nav-btn">
+  <button class="btn btn-secondary" onclick="back(2)">ย้อนกลับ</button>
+  <button class="btn btn-main" onclick="gotoPage4()">ถัดไป</button>
+</div>
+</section>
+
+<!-- PAGE 4 -->
+<section id="page4" class="card-box d-none">
+<h2>แบบประเมินความพึงพอใจ❤️</h2>
+<div id="survey"></div>
+
+<div class="nav-btn">
+  <button class="btn btn-secondary" onclick="back(3)">ย้อนกลับ</button>
+  <button id="finishBtn" class="btn btn-success" disabled>เสร็จสิ้น</button>
+</div>
+</section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
