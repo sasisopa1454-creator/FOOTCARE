@@ -86,3 +86,16 @@ ops.map(o=>`<label><input type="radio" name="q${i}" onclick="checkSurvey()"> ${o
 function checkSurvey(){
   finishBtn.disabled=!qs.every((_,i)=>document.querySelector(`input[name=q${i}]:checked`));
 }
+fetch(APP_SCRIPT_URL, {
+  method: "POST",
+  body: JSON.stringify(data)
+})
+.then(res => res.json())
+.then(result => {
+  if (result.success) {
+    showModal();
+  }
+})
+.catch(() => {
+  alert("ไม่สามารถเชื่อมต่อระบบได้");
+});
