@@ -204,4 +204,18 @@ h2 {
 .modal-content button:hover {
   background: #4a42b8;
 }
+/* ===== TRAINING PAGE ===== */
+.training-page {
+  max-width: 900px;
+  margin: auto;
+}
+
+.training-img {
+  width: 100%;
+  max-width: 900px;
+  display: block;
+  margin: 20px auto;
+  border-radius: 12px;
+}
+
 
