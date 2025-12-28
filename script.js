@@ -99,3 +99,28 @@ fetch(APP_SCRIPT_URL, {
 .catch(() => {
   alert("ไม่สามารถเชื่อมต่อระบบได้");
 });
+function enableFinishButton() {
+  document.getElementById("finishBtn").disabled = false;
+}
+const satisfactionInputs = document.querySelectorAll(".satisfaction");
+
+satisfactionInputs.forEach(input => {
+  input.addEventListener("change", checkSatisfaction);
+});
+
+function checkSatisfaction() {
+  let allAnswered = true;
+
+  satisfactionInputs.forEach(input => {
+    if (!input.checked) {
+      allAnswered = false;
+    }
+  });
+
+  if (allAnswered) {
+    enableFinishButton();
+  }
+}
+document
+  .getElementById("finishBtn")
+  .addEventListener("click", submitForm);
